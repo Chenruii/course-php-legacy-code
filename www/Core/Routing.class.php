@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Routing
 {
     public static $routeFile = "routes.yml";
@@ -13,7 +15,7 @@ class Routing
             }
             $c = ucfirst($routes[$slug]["controller"]) . "Controller";
             $a = $routes[$slug]["action"] . "Action";
-            $cPath = "controllers/" . $c . ".class.php";
+            $cPath = "Controller/" . $c . ".class.php";
         } else {
             return ["c" => null, "a" => null, "cPath" => null];
         }

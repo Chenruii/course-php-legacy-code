@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Controller;
+
+use App\Core\Validator;
+use App\Core\View;
+use App\Models\Users;
+
 class UsersController
 {
     public function defaultAction()
