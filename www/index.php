@@ -1,11 +1,16 @@
 <?php
 
-require "conf.inc.php";
+use App\Core\Routing;
+
+// ici ccette fishier n'est panecessaire car nous avons un folder configue qui contient des global
+//require "conf.inc.php";
 
 function myAutoloader($class)
 {
-    $classPath = "core/" . $class . ".class.php";
-    $classModel = "models/" . $class . ".class.php";
+    // importer le Core routing
+    $class = substr($class, strpos($class, '\\') + 1);
+    $classPath = "Core/" . $class . ".class.php";
+    $classModel = "Models/" . $class . ".class.php";
     if (file_exists($classPath)) {
         include $classPath;
     } elseif (file_exists($classModel)) {
