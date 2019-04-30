@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace Models;
 
-use App\Core\BaseSQL;
-use App\Core\Routing;
+use Core\BaseSQL;
+
 
 class Users extends BaseSQL
 {
@@ -20,37 +20,37 @@ class Users extends BaseSQL
         parent::__construct();
     }
 
-    public function setFirstname($firstname)
+    public function setFirstname(string $firstname) :string
     {
         $this->firstname = ucwords(strtolower(trim($firstname)));
     }
 
-    public function setLastname($lastname)
+    public function setLastname(string $lastname) :string
     {
         $this->lastname = strtoupper(trim($lastname));
     }
 
-    public function setEmail($email)
+    public function setEmail(string $email) : string
     {
         $this->email = strtolower(trim($email));
     }
 
-    public function setPwd($pwd)
+    public function setPwd(string $pwd) :string
     {
         $this->pwd = password_hash($pwd, PASSWORD_DEFAULT);
     }
 
-    public function setRole($role)
+    public function setRole(int $role) :int
     {
         $this->role = $role;
     }
 
-    public function setStatus($status)
+    public function setStatus(int $status) :int
     {
         $this->status = $status;
     }
 
-    public function getRegisterForm()
+    public function getRegisterForm() :array
     {
         return [
             "config" => [
@@ -91,7 +91,7 @@ class Users extends BaseSQL
         ];
     }
 
-    public function getLoginForm()
+    public function getLoginForm() :array
     {
         return [
             "config" => [
