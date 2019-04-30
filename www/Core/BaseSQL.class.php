@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace Core;
 
 class BaseSQL
 {
@@ -20,7 +20,7 @@ class BaseSQL
     }
 
 
-    public function setId($id)
+    public function setId($id) : void
     {
         $this->id = $id;
         $this->getOneBy(["id" => $id], true);
@@ -52,7 +52,7 @@ class BaseSQL
     }
 
 
-    public function save()
+    public function save() : void
     {
         $dataObject = get_object_vars($this);
         $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));

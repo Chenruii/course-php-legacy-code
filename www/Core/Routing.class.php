@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Core;
+namespace Core;
 
 class Routing
 {
     public static $routeFile = "routes.yml";
 
-    public static function getRoute($slug)
+    public static function getRoute($slug) : array
     {
         $routes = yaml_parse_file(self::$routeFile);
         if (isset($routes[$slug])) {
@@ -20,11 +20,11 @@ class Routing
             return ["c" => null, "a" => null, "cPath" => null];
         }
 
-        return ["c" => $c, "a" => $a, "cPath" => $cPath];
+        return ['c' =>$c, 'a' => $a, 'cPath' => $cPath];
     }
 
 
-    public static function getSlug($c, $a)
+    public static function getSlug($c, $a) : ?array
     {
         $routes = yaml_parse_file(self::$routeFile);
 
