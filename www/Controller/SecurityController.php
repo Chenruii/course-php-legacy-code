@@ -9,6 +9,9 @@
 namespace Controller;
 
 
+use Core\View;
+use Models\Users;
+
 class SecurityController
 {
     public function addAction(): void
