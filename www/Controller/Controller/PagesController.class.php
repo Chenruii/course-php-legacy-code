@@ -6,9 +6,9 @@ use Core\View;
 
 class PagesController
 {
-    public function defaultAction() : void
+    public function defaultAction(): void
     {
-        $v = new View("homepage", "back");
-        $v->assign("pseudo", "prof");
+        $v = new View('homepage', 'back');
+        $v->assign('pseudo', 'prof');
     }
 }
