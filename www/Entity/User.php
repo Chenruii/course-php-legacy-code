@@ -10,10 +10,10 @@ namespace App\Enitty;
 
 class User implements UserInterface
 {
-    private id;
-    private firstname;
-    private lastnamemm
-    private email;
+    private $id;
+    private $firstname;
+    private $lastname;
+    private $email;
     private $password;
 
     public function getId(): ?int
