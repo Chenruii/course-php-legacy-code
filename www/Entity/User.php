@@ -5,10 +5,10 @@
  * Date: 07/05/2019
  * Time: 01:18
  */
-namespace App\Enitty;
+namespace App\Entity;
 
 
-class User implements UserInterface
+class User
 {
     private $id;
     private $firstname;
