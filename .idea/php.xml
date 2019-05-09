@@ -3,7 +3,8 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="C:/php/pear" />
+      <path value="C:/wamp-64/bin/php/php7.2.14" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>
