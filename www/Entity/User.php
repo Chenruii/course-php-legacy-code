@@ -2,68 +2,135 @@
 /**
  * Created by PhpStorm.
  * User: ruich
- * Date: 07/05/2019
- * Time: 01:18
+ * Date: 09/05/2019
+ * Time: 23:43
  */
+
 namespace App\Entity;
 
+use models\UserInterface;
 
-class User
+class User implements UserInterface
 {
     private $id;
-    private $firstname;
-    private $lastname;
+    private $identify;
     private $email;
-    private $password;
+    private $pwd;
+    private $role = 1;
+    private $status = 0;
 
-    public function getId(): ?int
+    /**
+     * User constructor.
+     * @param $id
+     * @param $identify
+     * @param $email
+     * @param $pwd
+     * @param int $role
+     * @param int $status
+     */
+    public function __construct($id, $identify, $email, $pwd, $role, $status)
+    {
+        $this->id = $id;
+        $this->identify = $identify;
+        $this->email = $email;
+        $this->pwd = $pwd;
+        $this->role = $role;
+        $this->status = $status;
+    }
+    /**
+     * @return mixed
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getEmail(): ?string
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdentify()
+    {
+        return $this->identify;
+    }
+
+    /**
+     * @param mixed $identify
+     */
+    public function setIdentify($identify)
+    {
+        $this->identify = $identify;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
     {
         $this->email = $email;
-
-        return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPwd()
     {
-        return $this->password;
+        return $this->pwd;
     }
 
-    public function setPassword(string $password): void
+    /**
+     * @param mixed $pwd
+     */
+    public function setPwd($pwd)
     {
-        $this->password = $password;
+        $this->pwd = $pwd;
     }
 
-    public function getFirstname(): ?string
+    /**
+     * @return int
+     */
+    public function getRole()
     {
-        return $this->firstname;
+        return $this->role;
     }
 
-    public function setFirstname(?string $firstname): self
+    /**
+     * @param int $role
+     */
+    public function setRole($role)
     {
-        $this->firstname = $firstname;
-
-        return $this;
+        $this->role = $role;
     }
 
-    public function getLastname(): ?string
+    /**
+     * @return int
+     */
+    public function getStatus()
     {
-        return $this->lastname;
+        return $this->status;
     }
 
-    public function setLastname(?string $lastname): self
+    /**
+     * @param int $status
+     */
+    public function setStatus($status)
     {
-        $this->lastname = $lastname;
-
-        return $this;
+        $this->status = $status;
     }
+
 }
