@@ -1,7 +1,6 @@
 <?php
 namespace App\PagesController;
 
-use Core\View;
 use View;
 
 class PagesController{

@@ -2,10 +2,10 @@
 
 namespace App\UsersController;
 
-use Models\Users;
+
+use Core\Validator;
+use Core\View;
 use Users;
-use Validator;
-use View;
 
 class UsersController
 {
