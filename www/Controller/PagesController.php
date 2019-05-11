@@ -1,15 +1,17 @@
 <?php
-
-declare(strict_types=1);
-namespace Controller;
+namespace App\PagesController;
 
 use Core\View;
+use View;
 
-class PagesController
-{
-    public function defaultAction(): void
-    {
-        $v = new View('homepage', 'back');
-        $v->assign('pseudo', 'prof');
-    }
+class PagesController{
+	
+	public function defaultAction(){
+
+
+		$v = new View("homepage", "back");
+		$v->assign("pseudo","prof");
+	}
+	
+
 }
